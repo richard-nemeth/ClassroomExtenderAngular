@@ -2,5 +2,5 @@ export class PathConstants {
   private constructor() {
   }
 
-  public static readonly ROOT_PATH: string = 'http://localhost:3000/';
+  public static readonly ROOT_PATH: string = 'https://me-classroom-extender-nodejs.herokuapp.com/';
 }
