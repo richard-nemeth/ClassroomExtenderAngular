@@ -5,9 +5,9 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 
-import {RootComponent} from './components/root/RootComponent';
+import {RootComponent} from './components/root/root.component';
 
-import {RootService} from './services/RootService';
+import {RootService} from './services/root.service';
 
 @NgModule({
   declarations: [

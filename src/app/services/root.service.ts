@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from '@angular/common/http';
 
-import {PathConstants} from '../constants/PathConstants';
+import {PathConstants} from '../constants/path.constants';
 
 @Injectable()
 export class RootService {
