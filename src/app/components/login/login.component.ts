@@ -3,10 +3,10 @@ import {Component} from '@angular/core';
 import {RootService} from 'src/app/services/root.service';
 
 @Component({
-  selector: 'root',
-  templateUrl: './root.component.html'
+  selector: 'app-login',
+  templateUrl: './login.component.html'
 })
-export class RootComponent {
+export class LoginComponent {
 
   public rootBackendMessage: any;
 
