@@ -1,10 +1,18 @@
-Hello World - Angular!
-
-Message from the backend: {{rootBackendMessage}}
-<mat-card>
-  <mat-card-header>
+<mat-card class='loginPanel'>
+  <mat-card-header style="justify-content: center;">
     <mat-card-title>
-      Login
+        Authentication
     </mat-card-title>
   </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      In order to have access to <b>your Google Classroom</b>, authenticate using <b>yourGoogle Account</b>.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color='primary' class='loginButton'>
+      Authenticate
+    </button>
+  </mat-card-actions>
 </mat-card>
