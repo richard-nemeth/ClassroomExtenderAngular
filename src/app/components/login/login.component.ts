@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {RootService} from 'src/app/services/root.service';
+import {AuthService} from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +9,10 @@ import {RootService} from 'src/app/services/root.service';
 })
 export class LoginComponent {
 
-  public rootBackendMessage: any;
-
-  public constructor(private rootService: RootService) {
-    this.setRootBackendMessage();
+  public constructor(private authService: AuthService) {
   }
 
-  private async setRootBackendMessage() {
-    this.rootBackendMessage = await this.rootService.getRootMessage();
+  public doAuthenticate(): void {
+    this.authService.authenticate();
   }
 }

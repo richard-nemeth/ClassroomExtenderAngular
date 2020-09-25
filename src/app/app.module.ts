@@ -11,7 +11,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {LoginComponent} from './components/login/login.component';
 
-import {RootService} from './services/root.service';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import {RootService} from './services/root.service';
     AngularMaterialModule,
   ],
   providers: [
-    RootService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
