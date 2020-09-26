@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from '@angular/common/http';
 
-import {RouteConstants} from '../constants/route.constants';
+import {BackendEndpointConstants} from '../constants/backend-endpoint.constants';
 
 @Injectable()
 export class AuthService {
@@ -11,7 +11,7 @@ export class AuthService {
 
   public async authenticate(): Promise<void> {
 
-    await this.httpClient.get(RouteConstants.Auth.Authentication).toPromise().then(response => {
+    await this.httpClient.get(BackendEndpointConstants.Auth.Authentication).toPromise().then(response => {
       if(response) {
         console.log(response);
       }
