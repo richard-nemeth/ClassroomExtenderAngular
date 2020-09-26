@@ -12,12 +12,14 @@ import {HeaderComponent} from './components/header/header.component';
 import {LoginComponent} from './components/login/login.component';
 
 import {AuthService} from './services/auth.service';
+import { GuardedComponent } from './components/guarded/guarder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    GuardedComponent
   ],
   imports: [
     BrowserModule,
