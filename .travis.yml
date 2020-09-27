@@ -5,7 +5,7 @@ before_install:
   npm install -g @angular/cli
 install: npm install
 script:
-  ng build --aot --prod
+  ng build --prod
 deploy:
   provider: heroku
   app: me-classroom-extender-angular
