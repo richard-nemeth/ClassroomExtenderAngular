@@ -1,10 +1,10 @@
+import {environment} from '../../environments/environment';
+
 export class BackendEndpointConstants {
   private constructor() {
   }
 
-  private static readonly HOST: string = 'http://localhost:3000/';
-
   public static readonly Auth = class {
-    public static readonly Authentication: string = BackendEndpointConstants.HOST + 'authentication';
+    public static readonly Authentication: string = environment.backendBaseUrl + 'authentication';
   }
 }
