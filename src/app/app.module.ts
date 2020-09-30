@@ -10,9 +10,10 @@ import {AppComponent} from './app.component';
 
 import {HeaderComponent} from './components/header/header.component';
 import {LoginComponent} from './components/login/login.component';
+import {GuardedComponent} from './components/guarded/guarder.component';
 
 import {AuthService} from './services/auth.service';
-import { GuardedComponent } from './components/guarded/guarder.component';
+import {NotificationService} from './services/notification.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { GuardedComponent } from './components/guarded/guarder.component';
     AngularMaterialModule,
   ],
   providers: [
-    AuthService
+    AuthService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,25 +1,28 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
+
+import {NotificationService} from './notification.service';
 
 import {BackendEndpointConstants} from '../constants/backend-endpoint.constants';
-import { RouteConstants } from '../constants/route.constants';
-
+import {SnackBarConstants} from '../constants/snackbar.constants';
 
 @Injectable()
 export class AuthService {
 
   public constructor(
     private httpClient: HttpClient,
-    private router: Router
+    private notificationService: NotificationService
   ) {
   }
 
-  public async authenticate(): Promise<void> {
-    await this.httpClient.get(BackendEndpointConstants.Auth.Authentication).toPromise().then(response => {
-      if(response) {
-        this.router.navigate([RouteConstants.GUARDER]);
-      }
-    });
+  public authenticate(): void {
+    this.httpClient.get(BackendEndpointConstants.Auth.Authentication, {responseType: 'text'}).toPromise()
+      .then(response => {
+        window.open(decodeURI(response.toString()), '_self');
+      }).catch((error: any) => {
+        console.log(error);
+
+        this.notificationService.showErrorMessage(SnackBarConstants.ErrorMessages.AUTH_ERROR);
+      })
   }
 }
