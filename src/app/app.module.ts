@@ -11,7 +11,8 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {LoginComponent} from './components/login/login.component';
 import {GuardedComponent} from './components/guarded/guarder.component';
-import {LoadingComponent} from './components/loading/loading.component';
+import {LoadingComponent} from './components/notification/loading/loading.component';
+import {ErrorComponent} from './components/notification/error/error.component';
 
 import {AuthService} from './services/auth.service';
 import {NotificationService} from './services/notification.service';
@@ -22,7 +23,8 @@ import {NotificationService} from './services/notification.service';
     HeaderComponent,
     LoginComponent,
     GuardedComponent,
-    LoadingComponent
+    LoadingComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
