@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 
+import {ErrorSnackbarComponent} from '../components/error-snackbar/error-snackbar.component';
 import {LoadingComponent} from '../components/loading/loading.component';
 
 import {SnackBarConstants} from '../constants/snackbar.constants';
@@ -13,8 +14,8 @@ export class NotificationService {
   public constructor(private matSnackbar: MatSnackBar) {
   }
 
-  public showErrorMessage(errorMessage: string): void {
-    this.matSnackbar.open(errorMessage, SnackBarConstants.CLOSE_ACTION, SnackBarConstants.ERROR_CONFIG);
+  public showErrorMessage(): void {
+    this.matSnackbar.openFromComponent(ErrorSnackbarComponent, SnackBarConstants.ERROR_CONFIG);
   }
 
   public showLoadingSnackbar(): void {

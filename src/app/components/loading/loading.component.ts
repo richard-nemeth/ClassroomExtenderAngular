@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-loading',
-  template: '<mat-spinner></mat-spinner>'
+  templateUrl: 'loading.component.html',
+  styleUrls: ['loading.component.css']
 })
 export class LoadingComponent {
 }

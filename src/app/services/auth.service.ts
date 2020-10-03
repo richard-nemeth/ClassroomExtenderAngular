@@ -24,7 +24,7 @@ export class AuthService {
       }).catch((error: any) => {
         console.log(error);
 
-        this.notificationService.showErrorMessage(SnackBarConstants.ErrorMessages.AUTH_ERROR);
+        this.notificationService.showErrorMessage();
       });
   }
 }

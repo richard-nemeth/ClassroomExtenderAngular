@@ -1,0 +1,6 @@
+.spinnerContainer {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  background-color: white;
+}
