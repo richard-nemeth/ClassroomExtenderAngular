@@ -16,6 +16,8 @@ export class AuthService {
   }
 
   public authenticate(): void {
+    this.notificationService.showLoadingSnackbar();
+
     this.httpClient.get(BackendEndpointConstants.Auth.Authentication, {responseType: 'text'}).toPromise()
       .then(response => {
         window.open(decodeURI(response.toString()), '_self');
