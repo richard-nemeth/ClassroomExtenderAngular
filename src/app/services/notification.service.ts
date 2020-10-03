@@ -1,6 +1,9 @@
 import {Injectable} from "@angular/core";
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
-import { SnackBarConstants } from '../constants/snackbar.constants';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
+import {LoadingComponent} from '../components/loading/loading.component';
+
+import {SnackBarConstants} from '../constants/snackbar.constants';
 
 @Injectable()
 export class NotificationService {
@@ -9,6 +12,10 @@ export class NotificationService {
   }
 
   public showErrorMessage(errorMessage: string): void {
-    this.matSnackbar.open(errorMessage);
+    this.matSnackbar.open(errorMessage, SnackBarConstants.CLOSE_ACTION, SnackBarConstants.ERROR_CONFIG);
+  }
+
+  public showLoadingSnackbar(): void {
+    this.matSnackbar.openFromComponent(LoadingComponent, SnackBarConstants.LOADING_CONFIG);
   }
 }

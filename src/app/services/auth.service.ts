@@ -23,6 +23,6 @@ export class AuthService {
         console.log(error);
 
         this.notificationService.showErrorMessage(SnackBarConstants.ErrorMessages.AUTH_ERROR);
-      })
+      });
   }
 }
