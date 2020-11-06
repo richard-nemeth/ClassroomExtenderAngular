@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { GuardedComponent } from '../components/guarded/guarder.component';
 
 import {LoginComponent} from '../components/login/login.component';
-import { RouteConstants } from '../constants/route.constants';
+import {LoginSuccessComponent} from '../components/loginSuccess/login.success.component';
+import {RouteConstants} from '../constants/route.constants';
 
 const routes: Routes = [
   {path: RouteConstants.BASE, redirectTo: RouteConstants.LOGIN, pathMatch: 'full'},
   {path: RouteConstants.LOGIN, component: LoginComponent},
-  {path: RouteConstants.GUARDER, component: GuardedComponent}
+  {path: RouteConstants.LOGIN_SUCCESS, component: LoginSuccessComponent}
 ];
 
 @NgModule({
