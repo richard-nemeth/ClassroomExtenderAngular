@@ -13,6 +13,7 @@ import {RegistrationComponent} from './components/registration/registration.comp
 import {RegistrationSuccessComponent} from './components/registrationSuccess/registration.success.component';
 import {LoadingComponent} from './components/notification/loading/loading.component';
 import {ErrorComponent} from './components/notification/error/error.component';
+import {HomeComponent} from './components/home/home.component';
 
 import {RegistrationService} from './services/registration.service';
 import {NotificationService} from './services/notification.service';
@@ -25,7 +26,8 @@ import {LocalStorageService} from './services/local-storage.service';
     RegistrationComponent,
     RegistrationSuccessComponent,
     LoadingComponent,
-    ErrorComponent
+    ErrorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
