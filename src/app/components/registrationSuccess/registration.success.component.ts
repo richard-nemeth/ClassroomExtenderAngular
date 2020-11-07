@@ -8,7 +8,7 @@ import {NotificationService} from 'src/app/services/notification.service';
   selector: 'app-login-success',
   templateUrl: './login.success.component.html',
 })
-export class LoginSuccessComponent implements OnInit {
+export class RegistrationSuccessComponent implements OnInit {
 
   public isLoginSuccess: boolean = true;
   public areScopesPresent: boolean = true;

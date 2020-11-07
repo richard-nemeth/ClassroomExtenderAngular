@@ -4,6 +4,6 @@ export class RouteConstants {
 
   public static readonly BASE: string = '';
 
-  public static readonly LOGIN: string = 'login';
-  public static readonly LOGIN_SUCCESS: string = 'login_success';
+  public static readonly REGISTRATION: string = 'registration';
+  public static readonly REGISTRATION_SUCCESS: string = 'registration_success';
 }

@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {LoginComponent} from '../components/login/login.component';
-import {LoginSuccessComponent} from '../components/loginSuccess/login.success.component';
+import {RegistrationComponent} from '../components/registration/registration.component';
+import {RegistrationSuccessComponent} from '../components/registrationSuccess/registration.success.component';
 import {RouteConstants} from '../constants/route.constants';
 
 const routes: Routes = [
-  {path: RouteConstants.BASE, redirectTo: RouteConstants.LOGIN, pathMatch: 'full'},
-  {path: RouteConstants.LOGIN, component: LoginComponent},
-  {path: RouteConstants.LOGIN_SUCCESS, component: LoginSuccessComponent}
+  {path: RouteConstants.BASE, redirectTo: RouteConstants.REGISTRATION, pathMatch: 'full'},
+  {path: RouteConstants.REGISTRATION, component: RegistrationComponent},
+  {path: RouteConstants.REGISTRATION_SUCCESS, component: RegistrationSuccessComponent}
 ];
 
 @NgModule({

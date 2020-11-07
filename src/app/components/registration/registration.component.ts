@@ -3,10 +3,10 @@ import {Component} from '@angular/core';
 import {AuthService} from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html'
+  selector: 'app-registration',
+  templateUrl: './registration.component.html'
 })
-export class LoginComponent {
+export class RegistrationComponent {
 
   public constructor(private authService: AuthService) {
   }
