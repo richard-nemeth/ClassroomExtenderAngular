@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 
-import {AuthService} from 'src/app/services/auth.service';
+import {RegistrationService} from 'src/app/services/registration.service';
 import {NotificationService} from 'src/app/services/notification.service';
 
 @Component({
-  selector: 'app-login-success',
-  templateUrl: './login.success.component.html',
+  selector: 'app-registration-success',
+  templateUrl: './registration.success.component.html',
 })
 export class RegistrationSuccessComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class RegistrationSuccessComponent implements OnInit {
   public constructor(
     private notificationService: NotificationService,
     private route: ActivatedRoute,
-    private authService: AuthService
+    private registrationService: RegistrationService
   ) {
     this.notificationService.showLoadingSnackbar();
   }
@@ -32,7 +32,7 @@ export class RegistrationSuccessComponent implements OnInit {
   }
 
   public retry(): void {
-    this.authService.authenticate();
+    this.registrationService.startRegistration();
   }
 
   private validateError(params: Params): void {

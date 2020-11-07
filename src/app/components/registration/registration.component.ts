@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {AuthService} from 'src/app/services/auth.service';
+import {RegistrationService} from 'src/app/services/registration.service';
 
 @Component({
   selector: 'app-registration',
@@ -8,10 +8,10 @@ import {AuthService} from 'src/app/services/auth.service';
 })
 export class RegistrationComponent {
 
-  public constructor(private authService: AuthService) {
+  public constructor(private registrationService: RegistrationService) {
   }
 
-  public doAuthenticate(): void {
-    this.authService.authenticate();
+  public doRegistration(): void {
+    this.registrationService.startRegistration();
   }
 }

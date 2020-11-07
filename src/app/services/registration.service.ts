@@ -4,10 +4,9 @@ import {HttpClient} from '@angular/common/http';
 import {NotificationService} from './notification.service';
 
 import {BackendEndpointConstants} from '../constants/backend-endpoint.constants';
-import {SnackBarConstants} from '../constants/snackbar.constants';
 
 @Injectable()
-export class AuthService {
+export class RegistrationService {
 
   public constructor(
     private httpClient: HttpClient,
@@ -15,7 +14,7 @@ export class AuthService {
   ) {
   }
 
-  public authenticate(): void {
+  public startRegistration(): void {
     this.notificationService.showLoadingSnackbar();
 
     this.httpClient.get(BackendEndpointConstants.Auth.Authentication, {responseType: 'text'}).toPromise()
