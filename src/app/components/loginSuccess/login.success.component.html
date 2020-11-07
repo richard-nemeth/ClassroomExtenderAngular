@@ -1,22 +1,49 @@
-<div *ngIf='isLoginSuccess; then successBlock else errorBlock'></div>
+<div *ngIf='isLoginSuccess; then successBlock else loginErrorBlock'></div>
 
 <ng-template #successBlock>
-  <mat-card class='centeredPanel'>
-    <mat-card-header style="justify-content: center;">
-      <mat-card-title>
-          Please wait!
-      </mat-card-title>
-    </mat-card-header>
+  <div *ngIf='areScopesPresent; then loginCompletedBlock else scopesMissingBlock'></div>
   
-    <mat-card-content>
-      <p>
-        You will be logged in a moment.
-      </p>
-    </mat-card-content>
-  </mat-card>
+  <ng-template #loginCompletedBlock>
+    <mat-card class='centeredPanel'>
+      <mat-card-header style="justify-content: center;">
+        <mat-card-title>
+            Please wait!
+        </mat-card-title>
+      </mat-card-header>
+    
+      <mat-card-content>
+        <p>
+          You will be logged in a moment.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+
+  <ng-template #scopesMissingBlock>
+    <mat-card class='centeredPanel'>
+      <mat-card-header style="justify-content: center;">
+        <mat-card-title>
+            Unable to Login!
+        </mat-card-title>
+      </mat-card-header>
+    
+      <mat-card-content>
+        <p>
+          You have given invalid access to the application. <br>
+          This prevents basic functionality.
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color='primary' class='loginButton' (click)='retry()'>
+          Try Again
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-template>
 </ng-template>
 
-<ng-template #errorBlock>
+<ng-template #loginErrorBlock>
   <mat-card class='centeredPanel'>
     <mat-card-header style="justify-content: center;">
       <mat-card-title>

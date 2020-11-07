@@ -11,6 +11,7 @@ import {NotificationService} from 'src/app/services/notification.service';
 export class LoginSuccessComponent implements OnInit {
 
   public isLoginSuccess: boolean = true;
+  public areScopesPresent: boolean = true;
 
   public constructor(
     private notificationService: NotificationService,
@@ -22,22 +23,35 @@ export class LoginSuccessComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
-      const error: Params = params['error'];
-
-      if (error) {
-        this.isLoginSuccess = false;
-
-        this.notificationService.hideLoadingSnackbar();
-
-        return;
+      this.validateError(params);
+      
+      if(this.isLoginSuccess) {
+        this.validateScopes(params);
       }
-
-      const scope: Params = params['scope'];
-      console.log(scope);
     });
   }
 
   public retry(): void {
     this.authService.authenticate();
+  }
+
+  private validateError(params: Params): void {
+    const error: Params = params['error'];
+
+    if (error) {
+      this.isLoginSuccess = false;
+
+      this.notificationService.hideLoadingSnackbar();
+    }
+  }
+
+  private validateScopes(params: Params): void {
+    const scopes: Params = params['scope'];
+
+    if (scopes.split(' ').length !== 6) {
+      this.areScopesPresent = false;
+    } else {
+      this.notificationService.hideLoadingSnackbar();
+    }
   }
 }
