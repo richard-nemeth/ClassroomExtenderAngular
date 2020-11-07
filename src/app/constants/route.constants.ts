@@ -6,4 +6,6 @@ export class RouteConstants {
 
   public static readonly REGISTRATION: string = 'registration';
   public static readonly REGISTRATION_SUCCESS: string = 'registration_success';
+
+  public static readonly HOME: string = 'home';
 }
