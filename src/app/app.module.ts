@@ -16,6 +16,7 @@ import {ErrorComponent} from './components/notification/error/error.component';
 
 import {RegistrationService} from './services/registration.service';
 import {NotificationService} from './services/notification.service';
+import {LocalStorageService} from './services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {NotificationService} from './services/notification.service';
   ],
   providers: [
     RegistrationService,
-    NotificationService
+    NotificationService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
