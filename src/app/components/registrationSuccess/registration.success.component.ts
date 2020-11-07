@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 
 import {RegistrationService} from 'src/app/services/registration.service';
-import {NotificationService} from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-registration-success',
@@ -14,19 +13,21 @@ export class RegistrationSuccessComponent implements OnInit {
   public areScopesPresent: boolean = true;
 
   public constructor(
-    private notificationService: NotificationService,
     private route: ActivatedRoute,
     private registrationService: RegistrationService
   ) {
-    this.notificationService.showLoadingSnackbar();
   }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.validateError(params);
       
-      if(this.isLoginSuccess) {
+      if (this.isLoginSuccess) {
         this.validateScopes(params);
+
+        if (this.areScopesPresent) {
+
+        }
       }
     });
   }
@@ -40,8 +41,6 @@ export class RegistrationSuccessComponent implements OnInit {
 
     if (error) {
       this.isLoginSuccess = false;
-
-      this.notificationService.hideLoadingSnackbar();
     }
   }
 
@@ -50,8 +49,6 @@ export class RegistrationSuccessComponent implements OnInit {
 
     if (scopes.split(' ').length !== 6) {
       this.areScopesPresent = false;
-    } else {
-      this.notificationService.hideLoadingSnackbar();
     }
   }
 }

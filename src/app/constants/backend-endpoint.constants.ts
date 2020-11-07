@@ -4,7 +4,8 @@ export class BackendEndpointConstants {
   private constructor() {
   }
 
-  public static readonly Auth = class {
-    public static readonly Authentication: string = environment.backendBaseUrl + 'authentication';
+  public static readonly Registration = class {
+    public static readonly REGISTRATION: string = environment.backendBaseUrl + 'registration';
+    public static readonly PERSIST_REGISTRATION: string = environment.backendBaseUrl + 'persist_registration';
   }
 }

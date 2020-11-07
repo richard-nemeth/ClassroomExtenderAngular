@@ -5,11 +5,8 @@ export class SnackBarConstants {
   private constructor() {
   }
 
-  public static readonly ERROR_CONFIG: MatSnackBarConfig = {
-    duration: 5000,
-    horizontalPosition: "center",
-    verticalPosition: "bottom"
-  }
+  public static readonly ERROR_REGISTRATION_START: string = "Could not begin authentication!";
+  public static readonly ERROR_REGISTRATION_PERSIST: string = "Could not persist registration!";
 
   public static readonly LOADING_CONFIG: MatSnackBarConfig = {
     horizontalPosition: "right",
