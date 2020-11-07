@@ -33,18 +33,24 @@ export class RegistrationService {
       });
   }
 
-  public completeRegistration(): void {
+  public completeRegistration(registrationCode: string): void {
     this.notificationService.showLoadingSnackbar();
 
-    this.httpClient.post(BackendEndpointConstants.Registration.PERSIST_REGISTRATION, {responseType: 'text'}).toPromise()
-    .then((userIdResponse: string) => {
+    this.httpClient.post(
+      BackendEndpointConstants.Registration.PERSIST_REGISTRATION,
+      {
+        registrationCode: registrationCode
+      },
+      {
+        responseType: 'text'
+      }).toPromise().then((userIdResponse: string) => {
       this.localStorageService.setUserToStorage(userIdResponse);
 
       this.router.navigate([RouteConstants.HOME]);
-    }).catch((error: any) => {
-      console.log(error);
+      }).catch((error: any) => {
+        console.log(error);
 
-      this.notificationService.showErrorMessage(SnackBarConstants.ERROR_REGISTRATION_PERSIST);
-    });
+        this.notificationService.showErrorMessage(SnackBarConstants.ERROR_REGISTRATION_PERSIST);
+      });
   }
 }

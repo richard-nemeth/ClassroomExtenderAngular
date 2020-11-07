@@ -5,7 +5,7 @@ export class BackendEndpointConstants {
   }
 
   public static readonly Registration = class {
-    public static readonly REGISTRATION: string = environment.backendBaseUrl + 'registration';
+    public static readonly REGISTRATION: string = environment.backendBaseUrl + 'start_registration';
     public static readonly PERSIST_REGISTRATION: string = environment.backendBaseUrl + 'persist_registration';
   }
 }

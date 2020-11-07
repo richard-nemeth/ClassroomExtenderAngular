@@ -26,7 +26,7 @@ export class RegistrationSuccessComponent implements OnInit {
         this.validateScopes(params);
 
         if (this.areScopesPresent) {
-
+          this.registrationService.completeRegistration(params['code']);
         }
       }
     });
