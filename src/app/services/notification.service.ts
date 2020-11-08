@@ -29,4 +29,8 @@ export class NotificationService {
   public showLoadingSnackbar(): void {
     this.loadingSnackbar = this.matSnackbar.openFromComponent(LoadingComponent, SnackBarConstants.LOADING_CONFIG);
   }
+  
+  public hideLoadingSnackbar(): void {
+    this.loadingSnackbar.dismiss();
+  }
 }

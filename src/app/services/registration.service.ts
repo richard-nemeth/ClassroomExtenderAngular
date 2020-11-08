@@ -9,8 +9,7 @@ import {RouteConstants} from '../constants/route.constants';
 import {LocalStorageService} from './local-storage.service';
 import {NotificationService} from './notification.service';
 
-import { RegistrationRequest } from '../models/RegistrationRequest';
-import { HttpOptions } from '../constants/http-options.constants';
+import {RegistrationRequest} from '../models/RegistrationRequest';
 
 @Injectable()
 export class RegistrationService {
@@ -26,7 +25,7 @@ export class RegistrationService {
   public startRegistration(): void {
     this.notificationService.showLoadingSnackbar();
 
-    this.httpClient.get(BackendEndpointConstants.Registration.REGISTRATION, HttpOptions.GET_OPTIONS).toPromise()
+    this.httpClient.get(BackendEndpointConstants.Registration.REGISTRATION, {responseType: 'text'}).toPromise()
       .then((authURlResponse: string) => {
         window.open(decodeURI(authURlResponse.toString()), '_self');
       }).catch((error: any) => {
@@ -39,17 +38,24 @@ export class RegistrationService {
   public completeRegistration(registrationCode: string): void {
     this.notificationService.showLoadingSnackbar();
     const registrationRequest: RegistrationRequest = {
-      registractionCode: registrationCode
+      registrationCode: registrationCode
     }
 
     this.httpClient.post(
       BackendEndpointConstants.Registration.PERSIST_REGISTRATION,
       registrationRequest,
-      HttpOptions.POST_OPTIONS
+      {
+        headers:  new HttpHeaders({
+          contentType: 'application/json'
+        }),
+        responseType: 'text'
+      }
     ).toPromise().then((userIdResponse: string) => {
       this.localStorageService.setUserToStorage(decodeURI(userIdResponse));
 
       this.router.navigate([RouteConstants.HOME]);
+
+      this.notificationService.hideLoadingSnackbar();
     }).catch((error: any) => {
       console.log(error);
 
