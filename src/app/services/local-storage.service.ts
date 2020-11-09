@@ -3,7 +3,7 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class LocalStorageService {
 
-  public static readonly USER_KEY: string = 'user';
+  private static readonly USER_KEY: string = 'user';
 
   public constructor() {
   }
