@@ -6,12 +6,13 @@ import {RegistrationSuccessComponent} from '../components/registrationSuccess/re
 import {HomeComponent} from '../components/home/home.component';
 
 import {RouteConstants} from '../constants/route.constants';
+import { AuthGuardService } from '../services/auth-guard.service';
 
 const routes: Routes = [
   {path: RouteConstants.BASE, redirectTo: RouteConstants.REGISTRATION, pathMatch: 'full'},
   {path: RouteConstants.REGISTRATION, component: RegistrationComponent},
   {path: RouteConstants.REGISTRATION_SUCCESS, component: RegistrationSuccessComponent},
-  {path: RouteConstants.HOME, component: HomeComponent}
+  {path: RouteConstants.HOME, component: HomeComponent, canActivate: [AuthGuardService]}
 ];
 
 @NgModule({

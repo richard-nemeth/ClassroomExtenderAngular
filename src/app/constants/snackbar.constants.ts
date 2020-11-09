@@ -7,6 +7,7 @@ export class SnackBarConstants {
 
   public static readonly ERROR_REGISTRATION_START: string = "Could not begin authentication!";
   public static readonly ERROR_REGISTRATION_PERSIST: string = "Could not persist registration!";
+  public static readonly ERROR_REGISTRATION_MISSING: string = "You must register before usage!"
 
   public static readonly LOADING_CONFIG: MatSnackBarConfig = {
     horizontalPosition: "right",
