@@ -11,6 +11,8 @@ export class HeaderComponent {
   public isUserLoggedIn: boolean;
 
   public constructor(private localStorageService: LocalStorageService) {
-    this.isUserLoggedIn = this.localStorageService.isUserIdPresent();
+    this.localStorageService.getStoredUserSubject().subscribe((isStoredUserSet: boolean) => {
+      this.isUserLoggedIn = isStoredUserSet;
+    });
   }
 }
