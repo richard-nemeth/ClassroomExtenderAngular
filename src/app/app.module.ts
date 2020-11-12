@@ -14,6 +14,7 @@ import {RegistrationSuccessComponent} from './components/registrationSuccess/reg
 import {LoadingComponent} from './components/notification/loading/loading.component';
 import {ErrorComponent} from './components/notification/error/error.component';
 import {HomeComponent} from './components/home/home.component';
+import {ContentComponent} from './components/content/content.component';
 
 import {RegistrationService} from './services/registration.service';
 import {NotificationService} from './services/notification.service';
@@ -28,7 +29,8 @@ import {AuthGuardService} from './services/auth-guard.service';
     RegistrationSuccessComponent,
     LoadingComponent,
     ErrorComponent,
-    HomeComponent
+    HomeComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
