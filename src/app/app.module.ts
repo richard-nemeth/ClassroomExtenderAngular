@@ -9,7 +9,7 @@ import {AngularMaterialModule} from './modules/angular-material.module';
 import {AppComponent} from './app.component';
 
 import {HeaderComponent} from './components/header/header.component';
-import {RegistrationComponent} from './components/registration/registration.component';
+import {AuthenticationComponent} from './components/authentication/authentication.component';
 import {RegistrationSuccessComponent} from './components/registrationSuccess/registration.success.component';
 import {LoadingComponent} from './components/notification/loading/loading.component';
 import {ErrorComponent} from './components/notification/error/error.component';
@@ -26,7 +26,7 @@ import {AuthenticationService} from './services/authentication.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    RegistrationComponent,
+    AuthenticationComponent,
     RegistrationSuccessComponent,
     LoadingComponent,
     ErrorComponent,

@@ -3,13 +3,14 @@ import {Router} from '@angular/router';
 
 import {RegistrationService} from 'src/app/services/registration.service';
 import {LocalStorageService} from 'src/app/services/local-storage.service';
-import { RouteConstants } from 'src/app/constants/route.constants';
+
+import {RouteConstants} from 'src/app/constants/route.constants';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html'
+  selector: 'app-authentication',
+  templateUrl: './authentication.component.html'
 })
-export class RegistrationComponent {
+export class AuthenticationComponent {
 
   public constructor(
     private registrationService: RegistrationService,
