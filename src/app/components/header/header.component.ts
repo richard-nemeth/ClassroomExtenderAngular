@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 
+import {AuthenticationService} from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,6 +9,10 @@ import {Component} from '@angular/core';
 })
 export class HeaderComponent {
 
-  public constructor() {
+  public constructor(private authenticationService: AuthenticationService) {
+  }
+
+  public logout(): void {
+    this.authenticationService.doLogout();
   }
 }

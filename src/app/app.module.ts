@@ -20,6 +20,7 @@ import {RegistrationService} from './services/registration.service';
 import {NotificationService} from './services/notification.service';
 import {LocalStorageService} from './services/local-storage.service';
 import {AuthGuardService} from './services/auth-guard.service';
+import {AuthenticationService} from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {AuthGuardService} from './services/auth-guard.service';
     RegistrationService,
     NotificationService,
     LocalStorageService,
-    AuthGuardService
+    AuthGuardService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

@@ -20,4 +20,8 @@ export class LocalStorageService {
   public isUserIdPresent(): boolean {
     return this.getUserFromStorage() !== null;
   }
+
+  public removeUserFromStorage(): void {
+    localStorage.removeItem(LocalStorageService.USER_KEY);
+  }
 }
