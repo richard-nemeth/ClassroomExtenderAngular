@@ -22,19 +22,6 @@ export class RegistrationService {
   ) {
   }
 
-  public startRegistration(): void {
-    this.notificationService.showLoadingSnackbar();
-
-    this.httpClient.get(BackendEndpointConstants.Registration.REGISTRATION, {responseType: 'text'}).toPromise()
-      .then((authURlResponse: string) => {
-        window.open(decodeURI(authURlResponse.toString()), '_self');
-      }).catch((error: any) => {
-        console.log(error);
-
-        this.notificationService.showErrorMessage(SnackBarConstants.ERROR_REGISTRATION_START);
-      });
-  }
-
   public completeRegistration(registrationCode: string): void {
     this.notificationService.showLoadingSnackbar();
     const registrationRequest: RegistrationRequest = {
@@ -42,7 +29,7 @@ export class RegistrationService {
     }
 
     this.httpClient.post(
-      BackendEndpointConstants.Registration.PERSIST_REGISTRATION,
+      BackendEndpointConstants.Authentication.PERSIST_REGISTRATION,
       registrationRequest,
       {
         headers:  new HttpHeaders({

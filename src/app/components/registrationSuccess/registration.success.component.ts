@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 
 import {RegistrationService} from 'src/app/services/registration.service';
+import {AuthenticationService} from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-registration-success',
@@ -14,7 +15,8 @@ export class RegistrationSuccessComponent implements OnInit {
 
   public constructor(
     private route: ActivatedRoute,
-    private registrationService: RegistrationService
+    private registrationService: RegistrationService,
+    private authenticationService: AuthenticationService
   ) {
   }
 
@@ -33,7 +35,7 @@ export class RegistrationSuccessComponent implements OnInit {
   }
 
   public retry(): void {
-    this.registrationService.startRegistration();
+    this.authenticationService.startAuthentication();
   }
 
   private validateError(params: Params): void {
