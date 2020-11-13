@@ -5,7 +5,7 @@ import {AuthenticationService} from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-authentication-result',
-  templateUrl: './authentication-result.component.html',
+  templateUrl: './authentication.result.component.html',
 })
 export class AuthenticationResultComponent implements OnInit {
 
