@@ -37,13 +37,13 @@ export class AuthenticationService {
 
   public persistAuthentication(code: string): void {
     this.notificationService.showLoadingSnackbar();
-    const registrationRequest: AuthenticationRequest = {
+    const authenticationRequest: AuthenticationRequest = {
       code: code
     }
 
     this.httpClient.post(
       BackendEndpointConstants.Authentication.PERSIST_AUTHENTICATION,
-      registrationRequest,
+      authenticationRequest,
       {
         headers:  new HttpHeaders({
           contentType: 'application/json'
