@@ -19,7 +19,7 @@ export class AuthGuardService implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    const isUserIdPresent: boolean = this.localStorageService.isUserIdPresent();
+    const isUserIdPresent: boolean = this.localStorageService.getisUserLoggedInSubject().value;
 
     if (!isUserIdPresent) {
       this.router.navigateByUrl(RouteConstants.AUTHENTICATION);

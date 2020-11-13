@@ -1,27 +1,41 @@
 import {Injectable} from "@angular/core";
-import {Subject} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class LocalStorageService {
 
-  private static readonly USER_KEY: string = 'user';
+  private static readonly USER_KEY: string = 'userId';
+
+  private isUserLoggedInSubject: BehaviorSubject<boolean>;
 
   public constructor() {
+    this.isUserLoggedInSubject = new BehaviorSubject(false);
+
+    if (this.getUserIdFromStorage()) {
+      this.isUserLoggedInSubject.next(true);
+    } else {
+      this.isUserLoggedInSubject.next(false);
+    }
   }
 
-  public setUserToStorage(userId: string): void {
+  public getisUserLoggedInSubject(): BehaviorSubject<boolean> {
+    return this.isUserLoggedInSubject;
+  }
+
+  public setUserIdToStorage(userId: string): void {
     localStorage.setItem(LocalStorageService.USER_KEY, userId);
+
+    this.isUserLoggedInSubject.next(true);
   }
 
-  public getUserFromStorage(): string {
+  public getUserIdFromStorage(): string {
    return localStorage.getItem(LocalStorageService.USER_KEY);
   }
 
-  public isUserIdPresent(): boolean {
-    return this.getUserFromStorage() !== null;
+  public removeUserIdFromStorage(): void {
+    localStorage.removeItem(LocalStorageService.USER_KEY);
+
+    this.isUserLoggedInSubject.next(false);
   }
 
-  public removeUserFromStorage(): void {
-    localStorage.removeItem(LocalStorageService.USER_KEY);
-  }
 }

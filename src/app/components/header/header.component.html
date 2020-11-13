@@ -3,5 +3,7 @@
 
   <span class="spacer"></span>
 
-  <button mat-raised-button (click)="logout()">Logout</button>
+  <button mat-raised-button (click)="logout()" *ngIf="isUserLoggedIn">
+    Logout
+  </button>
 </mat-toolbar>

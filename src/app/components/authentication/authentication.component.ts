@@ -25,7 +25,7 @@ export class AuthenticationComponent {
   }
 
   private redirectIfUserRegistrated(): void {
-    if (this.storageService.getUserFromStorage() !== null) {
+    if (this.storageService.getUserIdFromStorage() !== null) {
       this.router.navigate([RouteConstants.HOME]);
     }
   }

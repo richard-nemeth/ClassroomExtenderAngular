@@ -51,7 +51,7 @@ export class AuthenticationService {
         responseType: 'text'
       }
     ).toPromise().then((userIdResponse: string) => {
-      this.localStorageService.setUserToStorage(decodeURI(userIdResponse));
+      this.localStorageService.setUserIdToStorage(decodeURI(userIdResponse));
 
       this.router.navigate([RouteConstants.HOME]);
 
@@ -64,7 +64,7 @@ export class AuthenticationService {
   }
 
   public doLogout(): void {
-    this.localStorageService.removeUserFromStorage();
+    this.localStorageService.removeUserIdFromStorage();
 
     this.router.navigate([RouteConstants.AUTHENTICATION]);
   }
