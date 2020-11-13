@@ -22,9 +22,9 @@ export class AuthGuardService implements CanActivate {
     const isUserIdPresent: boolean = this.localStorageService.isUserIdPresent();
 
     if (!isUserIdPresent) {
-      this.router.navigateByUrl(RouteConstants.REGISTRATION);
+      this.router.navigateByUrl(RouteConstants.AUTHENTICATION);
 
-      this.notificationService.showErrorMessage(SnackBarConstants.ERROR_REGISTRATION_MISSING);
+      this.notificationService.showErrorMessage(SnackBarConstants.ERROR_AUTHENTICATION_MISSING);
     }
 
     return isUserIdPresent;

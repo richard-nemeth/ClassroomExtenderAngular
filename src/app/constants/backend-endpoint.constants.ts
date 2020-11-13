@@ -6,6 +6,6 @@ export class BackendEndpointConstants {
 
   public static readonly Authentication = class {
     public static readonly AUTHENTICATION: string = environment.backendBaseUrl + 'start_authentication';
-    public static readonly PERSIST_REGISTRATION: string = environment.backendBaseUrl + 'persist_registration';
+    public static readonly PERSIST_AUTHENTICATION: string = environment.backendBaseUrl + 'persist_authentication';
   }
 }

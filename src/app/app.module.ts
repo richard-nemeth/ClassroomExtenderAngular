@@ -10,24 +10,24 @@ import {AppComponent} from './app.component';
 
 import {HeaderComponent} from './components/header/header.component';
 import {AuthenticationComponent} from './components/authentication/authentication.component';
-import {RegistrationSuccessComponent} from './components/registrationSuccess/registration.success.component';
+import {AuthenticationResultComponent} from './components/authenticationResult/authentication.result.component';
 import {LoadingComponent} from './components/notification/loading/loading.component';
 import {ErrorComponent} from './components/notification/error/error.component';
 import {HomeComponent} from './components/home/home.component';
 import {ContentComponent} from './components/content/content.component';
 
-import {RegistrationService} from './services/registration.service';
 import {NotificationService} from './services/notification.service';
 import {LocalStorageService} from './services/local-storage.service';
 import {AuthGuardService} from './services/auth-guard.service';
 import {AuthenticationService} from './services/authentication.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AuthenticationComponent,
-    RegistrationSuccessComponent,
+    AuthenticationResultComponent,
     LoadingComponent,
     ErrorComponent,
     HomeComponent,
@@ -41,7 +41,6 @@ import {AuthenticationService} from './services/authentication.service';
     AngularMaterialModule,
   ],
   providers: [
-    RegistrationService,
     NotificationService,
     LocalStorageService,
     AuthGuardService,

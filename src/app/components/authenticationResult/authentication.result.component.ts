@@ -1,21 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 
-import {RegistrationService} from 'src/app/services/registration.service';
 import {AuthenticationService} from 'src/app/services/authentication.service';
 
 @Component({
-  selector: 'app-registration-success',
-  templateUrl: './registration.success.component.html',
+  selector: 'app-authentication-result',
+  templateUrl: './authentication-result.component.html',
 })
-export class RegistrationSuccessComponent implements OnInit {
+export class AuthenticationResultComponent implements OnInit {
 
   public isLoginSuccess: boolean = true;
   public areScopesPresent: boolean = true;
 
   public constructor(
     private route: ActivatedRoute,
-    private registrationService: RegistrationService,
     private authenticationService: AuthenticationService
   ) {
   }
@@ -28,7 +26,7 @@ export class RegistrationSuccessComponent implements OnInit {
         this.validateScopes(params);
 
         if (this.areScopesPresent) {
-          this.registrationService.completeRegistration(params['code']);
+          this.authenticationService.persistAuthentication(params['code']);
         }
       }
     });
