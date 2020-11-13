@@ -47,7 +47,7 @@ export class RegistrationSuccessComponent implements OnInit {
   private validateScopes(params: Params): void {
     const scopes: Params = params['scope'];
 
-    if (scopes.split(' ').length !== 6) {
+    if (scopes.split(' ').length !== 9) {
       this.areScopesPresent = false;
     }
   }
