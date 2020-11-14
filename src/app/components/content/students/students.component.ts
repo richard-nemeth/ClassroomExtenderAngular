@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import {MatTableDataSource} from '@angular/material/table';
 
 import {Student} from 'src/app/models/courses/Student';
 
@@ -10,7 +10,7 @@ import {StudentsService} from 'src/app/services/students.service';
   selector: 'app-students',
   templateUrl: './students.component.html'
 })
-export class StudentsComponent implements OnInit, AfterViewInit {
+export class StudentsComponent implements OnInit {
 
   @Input() courseId: string;
 
@@ -18,7 +18,6 @@ export class StudentsComponent implements OnInit, AfterViewInit {
 
   public readonly columns: string[] = ['name'];
   public dataSource = new MatTableDataSource<Student>();
-  public isDataloaded: boolean;
 
   public constructor(private studentsService: StudentsService) {
   }
@@ -28,11 +27,7 @@ export class StudentsComponent implements OnInit, AfterViewInit {
     
     if (students) {
       this.dataSource.data = students;
-      this.isDataloaded = true;
+      this.dataSource.paginator = this.paginator;
     }
-  }
-
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
   }
 }
