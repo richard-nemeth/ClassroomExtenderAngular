@@ -21,6 +21,10 @@ export class CoursesService {
   ) {
   }
 
+  public openCourseOnClassroom(url: string): void {
+    window.open(url, '_blank');
+  }
+
   public async getMyTeacherCourses(): Promise<Course[]> {
     this.notificationService.showLoadingSnackbar();
     const authHeader: string = 'Basic ' + this.localStorageService.getUserIdFromStorage();

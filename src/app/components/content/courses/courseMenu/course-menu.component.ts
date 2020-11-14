@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import {Course} from 'src/app/models/courses/Course';
+import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
   selector: 'app-course-menu',
@@ -9,6 +10,10 @@ export class CourseMenuComponent {
 
   @Input() public course: Course;
 
-  public constructor() {
+  public constructor(private courseService: CoursesService) {
+  }
+
+  public openCourseOnClassroom(): void {
+    this.courseService.openCourseOnClassroom(this.course.link);
   }
 }
