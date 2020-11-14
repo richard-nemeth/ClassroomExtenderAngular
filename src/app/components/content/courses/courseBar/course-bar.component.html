@@ -16,4 +16,6 @@
 
     <app-course-menu [course]="course"></app-course-menu>
   </mat-toolbar>
+
+  <app-students *ngIf="isOpened"></app-students>
 </mat-expansion-panel>

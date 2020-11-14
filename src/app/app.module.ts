@@ -18,6 +18,7 @@ import {ContentComponent} from './components/content/content.component';
 import {CoursesComponent} from './components/content/courses/courses.component';
 import {CourseBarComponent} from './components/content/courses/courseBar/course-bar.component';
 import {CourseMenuComponent} from './components/content/courses/courseMenu/course-menu.component';
+import {StudentsComponent} from './components/content/students/students.component';
 
 import {NotificationService} from './services/notification.service';
 import {LocalStorageService} from './services/local-storage.service';
@@ -38,7 +39,8 @@ import {StudentsService} from './services/students.service';
     ContentComponent,
     CoursesComponent,
     CourseBarComponent,
-    CourseMenuComponent
+    CourseMenuComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
