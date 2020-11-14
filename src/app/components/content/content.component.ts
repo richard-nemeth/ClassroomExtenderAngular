@@ -9,7 +9,7 @@ import {CourseType} from 'src/app/models/courses/CourseType';
 })
 export class ContentComponent {
 
-  public myTeacher: CourseType = CourseType.MY_TEACHER_COURSES;
+  public courseType: typeof CourseType = CourseType;
 
   public constructor() {
   }

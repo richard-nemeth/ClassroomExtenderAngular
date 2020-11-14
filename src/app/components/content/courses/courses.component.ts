@@ -25,6 +25,11 @@ export class CoursesComponent implements OnInit {
 
         break;
       }
+      case CourseType.MY_INACTIVE_TEACHER_COURSES: {
+        this.courses = await this.coursesService.getMyInactiveTeacherCourses();
+
+        break;
+      }
     }
   }
 }
