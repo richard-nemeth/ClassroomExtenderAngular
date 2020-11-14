@@ -1,7 +1,11 @@
 .tableHolder {
-  width: 15%;
+  width: 20%;
 }
 
 .content {
   width: 100%;
+}
+
+.optionsCell {
+  text-align: right;
 }

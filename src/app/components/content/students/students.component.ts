@@ -17,7 +17,7 @@ export class StudentsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  public readonly columns: string[] = ['name'];
+  public readonly columns: string[] = ['name', 'options'];
   public dataSource = new MatTableDataSource<Student>();
 
   public constructor(private studentsService: StudentsService) {
