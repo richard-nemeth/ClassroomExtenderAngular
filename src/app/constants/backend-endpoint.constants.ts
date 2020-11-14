@@ -15,6 +15,6 @@ export class BackendEndpointConstants {
   }
 
   public static readonly Students = class {
-    public static readonly GET_STUDENTS_FOR_COURSE: string = environment.backendBaseUrl + '/getStudentsForCourse';
+    public static readonly GET_STUDENTS_FOR_COURSE: string = environment.backendBaseUrl + 'getStudentsForCourse';
   }
 }
