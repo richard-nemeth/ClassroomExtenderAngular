@@ -5,8 +5,7 @@ import {LocalStorageService} from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
 
