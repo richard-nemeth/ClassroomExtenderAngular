@@ -7,7 +7,7 @@ import {LocalStorageService} from './local-storage.service';
 
 import {BackendEndpointConstants} from '../constants/backend-endpoint.constants';
 
-import {Course} from '../models/Course';
+import {Course} from '../models/courses/Course';
 
 import {SnackBarConstants} from '../constants/snackbar.constants';
 import { resolve } from 'dns';
