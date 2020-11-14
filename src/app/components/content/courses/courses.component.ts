@@ -22,6 +22,8 @@ export class CoursesComponent implements OnInit {
     switch(this.courseType) {
       case CourseType.MY_TEACHER_COURSES: {
         this.courses = await this.coursesService.getMyTeacherCourses();
+
+        console.log(this.courses);
         break;
       }
     }

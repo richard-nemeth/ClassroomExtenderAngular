@@ -24,6 +24,7 @@ export class CoursesService {
   public async getMyTeacherCourses(): Promise<Course[]> {
     this.notificationService.showLoadingSnackbar();
     const authHeader: string = 'Basic ' + this.localStorageService.getUserIdFromStorage();
+    let foundCourses: Course[];
 
     await this.httpClient.get<Course[]>(
       BackendEndpointConstants.Courses.GET_MY_TEACHER_COURSES,
@@ -35,13 +36,13 @@ export class CoursesService {
     ).toPromise().then((courses: Course[]) => {
       this.notificationService.hideLoadingSnackbar();
 
-      return courses;
+      foundCourses = courses;
     }).catch((error: any) => {
       console.log(error);
 
       this.notificationService.showErrorMessage(SnackBarConstants.ERROR_COULD_NOT_GET_MY_TEACHER_COURSES);
     });
 
-    return null;
+    return foundCourses;
   }
 }
