@@ -20,7 +20,7 @@ import {NotificationService} from './services/notification.service';
 import {LocalStorageService} from './services/local-storage.service';
 import {AuthGuardService} from './services/auth-guard.service';
 import {AuthenticationService} from './services/authentication.service';
-
+import {CoursesService} from './services/courses.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import {AuthenticationService} from './services/authentication.service';
     NotificationService,
     LocalStorageService,
     AuthGuardService,
-    AuthenticationService
+    AuthenticationService,
+    CoursesService
   ],
   bootstrap: [AppComponent]
 })
