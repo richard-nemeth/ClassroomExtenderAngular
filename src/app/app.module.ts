@@ -15,6 +15,7 @@ import {LoadingComponent} from './components/notification/loading/loading.compon
 import {ErrorComponent} from './components/notification/error/error.component';
 import {HomeComponent} from './components/home/home.component';
 import {ContentComponent} from './components/content/content.component';
+import {CoursesComponent} from './components/content/courses/courses.component';
 
 import {NotificationService} from './services/notification.service';
 import {LocalStorageService} from './services/local-storage.service';
@@ -31,7 +32,8 @@ import {CoursesService} from './services/courses.service';
     LoadingComponent,
     ErrorComponent,
     HomeComponent,
-    ContentComponent
+    ContentComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,

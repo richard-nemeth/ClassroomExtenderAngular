@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+import {CourseType} from 'src/app/models/courses/CourseType';
 
 @Component({
   selector: 'app-content',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-  
+
+  public myTeacher: CourseType = CourseType.MY_TEACHER_COURSES;
+
+  public constructor() {
+  }
 }
