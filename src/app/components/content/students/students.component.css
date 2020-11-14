@@ -1,11 +1,23 @@
 .tableHolder {
   width: 20%;
+  float: left;
 }
 
 .content {
   width: 100%;
 }
 
+.tableBorder {
+  border-right: 1px;
+  border-right-style: solid;
+  border-color: grey;
+}
+
 .optionsCell {
   text-align: right;
+}
+
+.detailsHolder {
+  width: 80%;
+  float: right;
 }
