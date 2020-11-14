@@ -14,11 +14,13 @@ export class StudentsComponent implements OnInit {
 
   public readonly columns: string[] = ['name'];
   public students: Student[];
+  public studentCount: number;
 
   public constructor(private studentsService: StudentsService) {
   }
 
   async ngOnInit(): Promise<void> {
     this.students = await this.studentsService.getStudentsForCourse(this.courseId);
+    this.studentCount = this.students.length;
   }
 }
