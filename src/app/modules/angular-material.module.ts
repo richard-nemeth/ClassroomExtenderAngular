@@ -11,6 +11,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   exports: [
@@ -24,7 +26,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatMenuModule,
     MatIconModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatInputModule,
+    MatFormFieldModule
   ]
 })
 export class AngularMaterialModule { }

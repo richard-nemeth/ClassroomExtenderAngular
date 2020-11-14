@@ -30,4 +30,8 @@ export class StudentsComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
     }
   }
+
+  public applyDataTableFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+  }
 }
