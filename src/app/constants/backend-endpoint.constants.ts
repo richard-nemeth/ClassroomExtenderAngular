@@ -8,4 +8,8 @@ export class BackendEndpointConstants {
     public static readonly AUTHENTICATION: string = environment.backendBaseUrl + 'start_authentication';
     public static readonly PERSIST_AUTHENTICATION: string = environment.backendBaseUrl + 'persist_authentication';
   }
+
+  public static readonly Courses = class {
+    public static readonly GET_MY_TEACHER_COURSES: string = environment.backendBaseUrl + 'getMyTeacherCourses';
+  }
 }
