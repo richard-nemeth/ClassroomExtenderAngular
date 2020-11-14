@@ -24,6 +24,7 @@ import {LocalStorageService} from './services/local-storage.service';
 import {AuthGuardService} from './services/auth-guard.service';
 import {AuthenticationService} from './services/authentication.service';
 import {CoursesService} from './services/courses.service';
+import {StudentsService} from './services/students.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {CoursesService} from './services/courses.service';
     LocalStorageService,
     AuthGuardService,
     AuthenticationService,
-    CoursesService
+    CoursesService,
+    StudentsService
   ],
   bootstrap: [AppComponent]
 })

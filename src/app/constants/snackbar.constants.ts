@@ -12,6 +12,8 @@ export class SnackBarConstants {
   public static readonly ERROR_COULD_NOT_GET_MY_TEACHER_COURSES: string = "Could not retreive your teacher courses!";
   public static readonly ERROR_COULD_NOT_GET_MY_INACTIVE_TEACHER_COURSES: string = "Could not retreive your inactive teacher courses!";
 
+  public static readonly ERROR_COULD_NOT_GET_STUDENTS_FOR_COURSES: string = "Could not retreive students for course";
+
   public static readonly LOADING_CONFIG: MatSnackBarConfig = {
     horizontalPosition: "right",
     verticalPosition: "top"
