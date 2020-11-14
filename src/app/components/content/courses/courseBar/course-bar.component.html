@@ -1,4 +1,4 @@
-<mat-expansion-panel (opened)="isOpened = true" (closed)="isOpened = false" style="width: 90%;">
+<mat-expansion-panel (opened)="isOpened = true" (closed)="isOpened = false">
   <mat-expansion-panel-header>
     <mat-panel-title>
       {{course.name}}
@@ -6,9 +6,14 @@
 
     <mat-panel-description>
       <span class="spacer"></span>
-
     </mat-panel-description>
   </mat-expansion-panel-header>
-</mat-expansion-panel>
 
-<app-course-menu [course]="course"></app-course-menu>
+  <mat-toolbar>
+    {{course.name}}
+
+    <span class="spacer"></span>
+
+    <app-course-menu [course]="course"></app-course-menu>
+  </mat-toolbar>
+</mat-expansion-panel>

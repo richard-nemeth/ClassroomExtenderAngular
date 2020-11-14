@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Course } from 'src/app/models/courses/Course';
+import {Course} from 'src/app/models/courses/Course';
 
 @Component({
   selector: 'app-course-menu',
