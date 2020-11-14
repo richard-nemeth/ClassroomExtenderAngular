@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
@@ -8,7 +8,8 @@ import {StudentsService} from 'src/app/services/students.service';
 
 @Component({
   selector: 'app-students',
-  templateUrl: './students.component.html'
+  templateUrl: './students.component.html',
+  styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
 
