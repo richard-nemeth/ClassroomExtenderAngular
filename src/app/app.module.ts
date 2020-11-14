@@ -16,6 +16,7 @@ import {ErrorComponent} from './components/notification/error/error.component';
 import {HomeComponent} from './components/home/home.component';
 import {ContentComponent} from './components/content/content.component';
 import {CoursesComponent} from './components/content/courses/courses.component';
+import {CourseBarComponent} from './components/content/courseBar/course-bar.component';
 
 import {NotificationService} from './services/notification.service';
 import {LocalStorageService} from './services/local-storage.service';
@@ -33,7 +34,8 @@ import {CoursesService} from './services/courses.service';
     ErrorComponent,
     HomeComponent,
     ContentComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseBarComponent
   ],
   imports: [
     BrowserModule,

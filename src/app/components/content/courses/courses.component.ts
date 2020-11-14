@@ -11,7 +11,7 @@ import {CourseType} from 'src/app/models/courses/CourseType';
 })
 export class CoursesComponent implements OnInit {
 
-  @Input() courseType: CourseType;
+  @Input() public courseType: CourseType;
 
   public courses: Course[];
 
@@ -23,7 +23,6 @@ export class CoursesComponent implements OnInit {
       case CourseType.MY_TEACHER_COURSES: {
         this.courses = await this.coursesService.getMyTeacherCourses();
 
-        console.log(this.courses);
         break;
       }
     }
