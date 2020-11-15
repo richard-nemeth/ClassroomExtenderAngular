@@ -74,7 +74,7 @@ export class StudentDetailsComponent implements OnChanges {
     const studentWork: StudentWork = {
       title: courseWork.title,
       maxPoints: courseWork.maxPoints,
-      deadline: courseWork.dueDate + " - " + courseWork.dueTime
+      deadline: courseWork.dueDate
     }
 
     if (studentSubmission) {

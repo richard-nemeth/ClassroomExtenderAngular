@@ -3,5 +3,4 @@ export interface CourseWork {
   title: string;
   maxPoints: number;
   dueDate: string;
-  dueTime: string;
 }
