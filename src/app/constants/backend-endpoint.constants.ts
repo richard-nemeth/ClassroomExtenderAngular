@@ -13,6 +13,7 @@ export class BackendEndpointConstants {
     public static readonly GET_MY_TEACHER_COURSES: string = environment.backendBaseUrl + 'getMyTeacherCourses';
     public static readonly GET_MY_INACTIVE_TEACHER_COURSES: string = environment.backendBaseUrl + 'getMyInactiveTeacherCourses';
     public static readonly POST_COURSE_STUDENTS = environment.backendBaseUrl + 'addCourseStudents';
+    public static readonly GET_COURSE_DATA = environment.backendBaseUrl + 'getCourseDataExcel';
   }
 
   public static readonly Students = class {

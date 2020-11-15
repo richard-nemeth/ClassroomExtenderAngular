@@ -9,6 +9,9 @@
   <button mat-menu-item (click)="startUploadFile()">
     <span>Upload Students From Neptun</span>
   </button>
+  <button mat-menu-item (click)="getCourseData()">
+    <span>Download Course Data</span>
+  </button>
 
   <input
     id="fileInput"
@@ -16,4 +19,11 @@
     style="display: none"
     (change)="handleFileUpload($event.target.files)"
   >
+
+  <a
+    id="fileDownload"
+    style="display: none"
+    [href]="fileToDownloadUrl"
+    download="text.txt"
+  ></a>
 </mat-menu>

@@ -1,5 +1,6 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from "@angular/core";
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 import {NotificationService} from './notification.service';
 import {LocalStorageService} from './local-storage.service';
@@ -17,6 +18,7 @@ export class CoursesService {
     private httpClient: HttpClient,
     private notificationService: NotificationService,
     private localStorageService: LocalStorageService,
+    private sanitizer: DomSanitizer
   ) {
   }
 
@@ -100,5 +102,39 @@ export class CoursesService {
 
       this.notificationService.showErrorMessage(SnackBarConstants.ERROR_COURSE_STUDENT_UPLOAD);
     })
+  }
+
+  public async getCourseData(courseId: string): Promise<SafeResourceUrl> {
+    this.notificationService.showLoadingSnackbar();
+    const authHeader: string = 'Basic ' + this.localStorageService.getUserIdFromStorage();
+    let fileToDownloadUrl: SafeResourceUrl;
+
+    await this.httpClient.get(BackendEndpointConstants.Courses.GET_COURSE_DATA,
+      {
+        params: {
+          courseId: courseId
+        },
+        headers: new HttpHeaders({
+          authorization: authHeader
+        }),
+        responseType: 'arraybuffer'
+      }
+  ) .toPromise().then(response => {
+      fileToDownloadUrl = this.createDownloadUrlForFile(response);
+
+      this.notificationService.hideLoadingSnackbar();
+    }).catch((error: any) => {
+      console.log(error);
+
+      this.notificationService.showErrorMessage(SnackBarConstants.ERROR_GET_COURS_DATA);
+    });
+
+    return fileToDownloadUrl;
+  }
+
+  private createDownloadUrlForFile(response: ArrayBuffer): SafeResourceUrl {
+    const fileToDownload = new Blob([response], { type: 'application/octet-stream'});
+
+    return this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(fileToDownload));
   }
 }
