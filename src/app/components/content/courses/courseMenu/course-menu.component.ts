@@ -13,8 +13,6 @@ export class CourseMenuComponent {
 
   @Input() public course: Course;
 
-  private fileUploaded: File;
-
   public constructor(private courseService: CoursesService) {
   }
 
@@ -27,6 +25,6 @@ export class CourseMenuComponent {
   }
 
   public handleFileUpload(files: FileList) {
-    this.fileUploaded = files.item(0);
+    this.courseService.uploadCourseStudents(files.item(0));
   }
 }
