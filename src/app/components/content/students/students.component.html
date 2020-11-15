@@ -32,6 +32,6 @@
 </div>
 
 <div class="detailsHolder">
-  <app-student-details [student]="selectedStudent" *ngIf="selectedStudent">
+  <app-student-details *ngIf="selectedStudent" [student]="selectedStudent" [course]="course">
   </app-student-details>
 </div>
