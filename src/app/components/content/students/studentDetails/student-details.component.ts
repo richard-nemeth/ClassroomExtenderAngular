@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
 
 import {Course} from 'src/app/models/courses/Course';
 import {CourseWork} from 'src/app/models/courses/CourseWork';
@@ -16,6 +17,17 @@ export class StudentDetailsComponent implements OnInit {
   @Input() course: Course;
   @Input() student: Student;
 
+  public readonly columns: string[] = [
+    'title',
+    'maxPoints',
+    'deadline',
+    'draftGrade',
+    'finalGrade',
+    'late'
+  ];
+
+  public dataSource = new MatTableDataSource<StudentWork>();
+
   public constructor() {
   }
 
@@ -30,7 +42,7 @@ export class StudentDetailsComponent implements OnInit {
       this.getStudentWorks(studentWorks);
     }
 
-    console.log(studentWorks);
+    this.dataSource.data = studentWorks;
   }
 
   private getStudentWorks(studentWorks: StudentWork[]): void {

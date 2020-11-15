@@ -23,4 +23,51 @@
   <ng-template #noTried>
     <b>Picked up course times:</b> No data provided!
   </ng-template>
+
+  <table mat-table [dataSource]="dataSource" class="workTable">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let studentWork">
+        {{studentWork.title}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="maxPoints">
+      <th mat-header-cell *matHeaderCellDef> Max Points </th>
+      <td mat-cell *matCellDef="let studentWork">
+        {{studentWork.maxPoints}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deadline">
+      <th mat-header-cell *matHeaderCellDef> DeadLine </th>
+      <td mat-cell *matCellDef="let studentWork">
+        {{studentWork.deadline}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="draftGrade">
+      <th mat-header-cell *matHeaderCellDef> Draft Grade </th>
+      <td mat-cell *matCellDef="let studentWork">
+        {{studentWork.draft_grade}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="finalGrade">
+      <th mat-header-cell *matHeaderCellDef> Final Grade </th>
+      <td mat-cell *matCellDef="let studentWork">
+        {{studentWork.final_grade}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="late">
+      <th mat-header-cell *matHeaderCellDef> Late </th>
+      <td mat-cell *matCellDef="let studentWork">
+        <img *ngIf="studentWork.late" src="assets/errorIcon.png" class='notificationImg'>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+  </table>
 </div>
