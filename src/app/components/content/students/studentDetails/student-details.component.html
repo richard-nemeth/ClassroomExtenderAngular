@@ -1,3 +1,26 @@
 <mat-toolbar class="header">
   {{student.storedStudentData.name}}
 </mat-toolbar>
+
+<div class="content">
+  <div *ngIf="student.storedStudentData.neptunCode; else noNeptunCode">
+    <b>NeptunCode:</b> {{student.storedStudentData.neptunCode}}
+  </div>
+  <ng-template #noNeptunCode>
+    <b>NeptunCode:</b> No data provided! <br>
+  </ng-template>
+    
+  <div *ngIf="student.storedStudentData.department; else noDepartment">
+    <b>Department:</b> {{student.storedStudentData.department}}
+  </div>
+  <ng-template #noDepartment>
+    <b>Department:</b> No data provided! <br>
+  </ng-template>
+    
+  <div *ngIf="student.storedStudentData.tried; else noTried">
+    <b>Picked up course times:</b> {{student.storedStudentData.tried}} 
+  </div>
+  <ng-template #noTried>
+    <b>Picked up course times:</b> No data provided!
+  </ng-template>
+</div>
