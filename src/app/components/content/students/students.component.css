@@ -1,16 +1,13 @@
 .tableHolder {
   width: 20%;
   float: left;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-color: grey;
 }
 
 .content {
   width: 100%;
-}
-
-.tableBorder {
-  border-right: 1px;
-  border-right-style: solid;
-  border-color: grey;
 }
 
 .optionsCell {
@@ -20,4 +17,5 @@
 .detailsHolder {
   width: 80%;
   float: right;
+  margin-left: -1%;
 }
