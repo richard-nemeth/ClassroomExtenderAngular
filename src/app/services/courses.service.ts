@@ -135,8 +135,6 @@ export class CoursesService {
   private createDownloadUrlForFile(response: ArrayBuffer): string {
     const fileToDownload = new Blob([response], { type: 'application/ms-excel'});
 
-    //return this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(fileToDownload));
-
     return window.URL.createObjectURL(fileToDownload);
   }
 }

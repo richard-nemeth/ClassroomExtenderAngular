@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {SafeResourceUrl} from '@angular/platform-browser';
-import {Subject} from 'rxjs';
 
 import {Course} from 'src/app/models/courses/Course';
 

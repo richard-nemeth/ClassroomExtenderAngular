@@ -19,10 +19,10 @@
     style="display: none"
     (change)="handleFileUpload($event.target.files)"
   >
-
-  <a
-    id="fileDownload"
-    style="display: none"
-    [download]="fileToDownloadName"
-  ></a>
 </mat-menu>
+
+<a
+id="fileDownload"
+style="display: none"
+[download]="fileToDownloadName"
+></a>
