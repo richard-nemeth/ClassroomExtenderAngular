@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import {Course} from 'src/app/models/courses/Course';
 
 import {Student} from 'src/app/models/students/Student';
 
@@ -13,7 +14,7 @@ import {StudentsService} from 'src/app/services/students.service';
 })
 export class StudentsComponent implements OnInit {
 
-  @Input() courseId: string;
+  @Input() course: Course;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -26,7 +27,7 @@ export class StudentsComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    const students: Student[] = await this.studentsService.getStudentsForCourse(this.courseId);
+    const students: Student[] = await this.studentsService.getStudentsForCourse(this.course.id);
     
     if (students) {
       this.dataSource.data = students;
