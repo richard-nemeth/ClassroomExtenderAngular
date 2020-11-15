@@ -7,7 +7,7 @@ import {NotificationService} from './notification.service';
 import {BackendEndpointConstants} from '../constants/backend-endpoint.constants';
 import {SnackBarConstants} from '../constants/snackbar.constants';
 
-import {Student} from '../models/courses/Student';
+import {Student} from '../models/students/Student';
 
 
 @Injectable()

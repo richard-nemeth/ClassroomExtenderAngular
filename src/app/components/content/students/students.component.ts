@@ -2,7 +2,7 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
-import {Student} from 'src/app/models/courses/Student';
+import {Student} from 'src/app/models/students/Student';
 
 import {StudentsService} from 'src/app/services/students.service';
 
