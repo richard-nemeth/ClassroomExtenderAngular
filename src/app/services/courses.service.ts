@@ -87,7 +87,8 @@ export class CoursesService {
       {
         headers: new HttpHeaders({
           authorization: authHeader
-        })
+        }),
+        responseType: 'text'
       }
     ).toPromise().then(() => {
       this.notificationService.hideLoadingSnackbar();

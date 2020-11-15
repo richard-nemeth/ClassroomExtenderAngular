@@ -15,7 +15,7 @@ export class SnackBarConstants {
   public static readonly ERROR_COULD_NOT_GET_STUDENTS_FOR_COURSES: string = "Could not retreive students for course";
 
   public static readonly ERROR_COURSE_STUDENT_UPLOAD: string = "Could not upload students for course";
-  public static readonly SUCCESS_COURSE_STUDENT_UPLOAD: string = "Students successfully added."
+  public static readonly SUCCESS_COURSE_STUDENT_UPLOAD: string = "Students successfully added"
 
   public static readonly LOADING_CONFIG: MatSnackBarConfig = {
     horizontalPosition: "right",
