@@ -3,6 +3,7 @@ import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 
 import {ErrorComponent} from '../components/notification/error/error.component';
 import {LoadingComponent} from '../components/notification/loading/loading.component';
+import {SuccessComponent} from '../components/notification/success/success.component';
 
 import {SnackBarConstants} from '../constants/snackbar.constants';
 
@@ -17,6 +18,18 @@ export class NotificationService {
   public showErrorMessage(message: string): void {
     this.matSnackbar.openFromComponent(
       ErrorComponent,
+      {
+        duration: 5000,
+        horizontalPosition: "center",
+        verticalPosition: "bottom",
+        data: message
+      }
+    );
+  }
+
+  public showSuccessMessage(message: string): void {
+    this.matSnackbar.openFromComponent(
+      SuccessComponent,
       {
         duration: 5000,
         horizontalPosition: "center",

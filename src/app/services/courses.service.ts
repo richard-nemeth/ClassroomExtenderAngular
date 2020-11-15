@@ -73,4 +73,49 @@ export class CoursesService {
 
     return foundCourses;
   }
+
+  public async uploadCourseStudents(studentsFile: File): Promise<void> {
+    this.notificationService.showLoadingSnackbar();
+    const authHeader: string = 'Basic ' + this.localStorageService.getUserIdFromStorage();
+
+    const formData: FormData = new FormData();
+    formData.append('fileKey', studentsFile, studentsFile.name);
+
+    await this.httpClient.post(
+      BackendEndpointConstants.Courses.POST_COURSE_STUDENTS,
+      formData,
+      {
+        headers: new HttpHeaders({
+          authorization: authHeader
+        })
+      }
+    ).toPromise().then(() => {
+      this.notificationService.hideLoadingSnackbar();
+
+      this.notificationService.showSuccessMessage(SnackBarConstants.SUCCESS_COURSE_STUDENT_UPLOAD);
+    }).catch((error: any) => {
+      console.log(error);
+
+      this.notificationService.showErrorMessage(SnackBarConstants.ERROR_COURSE_STUDENT_UPLOAD);
+    })
+  }
+
+  /*
+     await this.httpClient.get<Course[]>(
+      BackendEndpointConstants.Courses.GET_MY_INACTIVE_TEACHER_COURSES,
+      {
+        headers: new HttpHeaders({
+          authorization: authHeader
+        })
+      }
+    ).toPromise().then((courses: Course[]) => {
+      this.notificationService.hideLoadingSnackbar();
+
+      foundCourses = courses;
+    }).catch((error: any) => {
+      console.log(error);
+
+      this.notificationService.showErrorMessage(SnackBarConstants.ERROR_COULD_NOT_GET_MY_TEACHER_COURSES);
+    });
+  */
 }

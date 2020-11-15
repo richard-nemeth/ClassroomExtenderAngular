@@ -13,11 +13,9 @@ export class CourseMenuComponent {
 
   @Input() public course: Course;
 
-  private fileUploader: FormControl;
   private fileUploaded: File;
 
   public constructor(private courseService: CoursesService) {
-    this.fileUploader = new FormControl('');
   }
 
   public openCourseOnClassroom(): void {
@@ -28,10 +26,7 @@ export class CourseMenuComponent {
     document.getElementById('fileInput').click();
   }
 
-  public handleFileUpload(file: File) {
-    this.fileUploaded = file;
-
-    console.log('ok');
-    console.log(file.name);
+  public handleFileUpload(files: FileList) {
+    this.fileUploaded = files.item(0);
   }
 }

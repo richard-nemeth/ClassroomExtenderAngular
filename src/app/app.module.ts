@@ -19,6 +19,7 @@ import {CoursesComponent} from './components/content/courses/courses.component';
 import {CourseBarComponent} from './components/content/courses/courseBar/course-bar.component';
 import {CourseMenuComponent} from './components/content/courses/courseMenu/course-menu.component';
 import {StudentsComponent} from './components/content/students/students.component';
+import {SuccessComponent} from './components/notification/success/success.component';
 
 import {NotificationService} from './services/notification.service';
 import {LocalStorageService} from './services/local-storage.service';
@@ -43,6 +44,7 @@ import {StudentDetailsComponent} from './components/content/students/studentDeta
     CourseMenuComponent,
     StudentsComponent,
     StudentDetailsComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
