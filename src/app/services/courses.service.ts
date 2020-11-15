@@ -1,6 +1,6 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from "@angular/core";
-import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import {DomSanitizer} from '@angular/platform-browser';
 
 import {NotificationService} from './notification.service';
 import {LocalStorageService} from './local-storage.service';
@@ -104,10 +104,10 @@ export class CoursesService {
     })
   }
 
-  public async getCourseData(courseId: string): Promise<SafeResourceUrl> {
+  public async getCourseData(courseId: string): Promise<string> {
     this.notificationService.showLoadingSnackbar();
     const authHeader: string = 'Basic ' + this.localStorageService.getUserIdFromStorage();
-    let fileToDownloadUrl: SafeResourceUrl;
+    let fileToDownloadUrl: string;
 
     await this.httpClient.get(BackendEndpointConstants.Courses.GET_COURSE_DATA,
       {
@@ -119,7 +119,7 @@ export class CoursesService {
         }),
         responseType: 'arraybuffer'
       }
-  ) .toPromise().then(response => {
+    ).toPromise().then((response: ArrayBuffer) => {
       fileToDownloadUrl = this.createDownloadUrlForFile(response);
 
       this.notificationService.hideLoadingSnackbar();
@@ -132,9 +132,11 @@ export class CoursesService {
     return fileToDownloadUrl;
   }
 
-  private createDownloadUrlForFile(response: ArrayBuffer): SafeResourceUrl {
-    const fileToDownload = new Blob([response], { type: 'application/octet-stream'});
+  private createDownloadUrlForFile(response: ArrayBuffer): string {
+    const fileToDownload = new Blob([response], { type: 'application/ms-excel'});
 
-    return this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(fileToDownload));
+    //return this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(fileToDownload));
+
+    return window.URL.createObjectURL(fileToDownload);
   }
 }

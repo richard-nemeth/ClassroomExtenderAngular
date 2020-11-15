@@ -1,5 +1,6 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 import {SafeResourceUrl} from '@angular/platform-browser';
+import {Subject} from 'rxjs';
 
 import {Course} from 'src/app/models/courses/Course';
 
@@ -9,13 +10,17 @@ import {CoursesService} from 'src/app/services/courses.service';
   selector: 'app-course-menu',
   templateUrl: './course-menu.component.html'
 })
-export class CourseMenuComponent {
+export class CourseMenuComponent implements OnInit {
 
   @Input() public course: Course;
 
-  public fileToDownloadUrl: SafeResourceUrl;
+  public fileToDownloadName: string;
 
   public constructor(private courseService: CoursesService) {
+  }
+
+  ngOnInit(): void {
+    this.fileToDownloadName = "CourseData_" + this.course.id + ".xlsx";
   }
 
   public openCourseOnClassroom(): void {
@@ -31,8 +36,11 @@ export class CourseMenuComponent {
   }
 
   public async getCourseData(): Promise<void> {
-    this.fileToDownloadUrl = await this.courseService.getCourseData(this.course.id);
+    const fileToDownloadUrl: string = await this.courseService.getCourseData(this.course.id);
 
-    document.getElementById('fileDownload').click();
+    const hrefElement: HTMLElement = document.getElementById('fileDownload');
+    hrefElement.setAttribute("href", fileToDownloadUrl);
+
+    hrefElement.click();
   }
 }
