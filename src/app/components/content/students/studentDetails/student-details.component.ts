@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 
 import {Course} from 'src/app/models/courses/Course';
@@ -12,7 +12,7 @@ import {StudentWork} from 'src/app/models/students/StudentWork';
   templateUrl: './student-details.component.html',
   styleUrls: ['./student-details.component.css']
 })
-export class StudentDetailsComponent implements OnInit {
+export class StudentDetailsComponent implements OnChanges {
 
   @Input() course: Course;
   @Input() student: Student;
@@ -31,7 +31,7 @@ export class StudentDetailsComponent implements OnInit {
   public constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.createStudentWorks();
   }
 
