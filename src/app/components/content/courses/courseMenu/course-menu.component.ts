@@ -25,6 +25,6 @@ export class CourseMenuComponent {
   }
 
   public handleFileUpload(files: FileList) {
-    this.courseService.uploadCourseStudents(files.item(0));
+    this.courseService.uploadCourseStudents(files.item(0), this.course.id);
   }
 }

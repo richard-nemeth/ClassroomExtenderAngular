@@ -74,11 +74,12 @@ export class CoursesService {
     return foundCourses;
   }
 
-  public async uploadCourseStudents(studentsFile: File): Promise<void> {
+  public async uploadCourseStudents(studentsFile: File, courseId: string): Promise<void> {
     this.notificationService.showLoadingSnackbar();
     const authHeader: string = 'Basic ' + this.localStorageService.getUserIdFromStorage();
 
     const formData: FormData = new FormData();
+    formData.append('courseId', courseId);
     formData.append('fileKey', studentsFile, studentsFile.name);
 
     await this.httpClient.post(
