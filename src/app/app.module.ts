@@ -26,6 +26,7 @@ import {AuthGuardService} from './services/auth-guard.service';
 import {AuthenticationService} from './services/authentication.service';
 import {CoursesService} from './services/courses.service';
 import {StudentsService} from './services/students.service';
+import {StudentDetailsComponent} from './components/content/students/studentDetails/student-details.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {StudentsService} from './services/students.service';
     CoursesComponent,
     CourseBarComponent,
     CourseMenuComponent,
-    StudentsComponent
+    StudentsComponent,
+    StudentDetailsComponent,
   ],
   imports: [
     BrowserModule,

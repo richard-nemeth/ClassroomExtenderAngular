@@ -20,6 +20,8 @@ export class StudentsComponent implements OnInit {
   public readonly columns: string[] = ['name', 'options'];
   public dataSource = new MatTableDataSource<Student>();
 
+  public selectedStudent: Student;
+
   public constructor(private studentsService: StudentsService) {
   }
 
@@ -34,5 +36,9 @@ export class StudentsComponent implements OnInit {
 
   public applyDataTableFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+  }
+
+  public showStudentDetails(student: Student): void {
+    this.selectedStudent = student;
   }
 }

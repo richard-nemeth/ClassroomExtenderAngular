@@ -15,7 +15,7 @@
       <ng-container matColumnDef="options">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let student" class="optionsCell">
-          <button mat-icon-button>
+          <button mat-icon-button (click)="showStudentDetails(student)">
             <mat-icon>notes</mat-icon>
           </button>
         </td>
@@ -34,5 +34,6 @@
 </div>
 
 <div class="detailsHolder">
-  ALMAAA
+  <app-student-details [student]="selectedStudent" *ngIf="selectedStudent">
+  </app-student-details>
 </div>
