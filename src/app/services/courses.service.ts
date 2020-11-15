@@ -99,23 +99,4 @@ export class CoursesService {
       this.notificationService.showErrorMessage(SnackBarConstants.ERROR_COURSE_STUDENT_UPLOAD);
     })
   }
-
-  /*
-     await this.httpClient.get<Course[]>(
-      BackendEndpointConstants.Courses.GET_MY_INACTIVE_TEACHER_COURSES,
-      {
-        headers: new HttpHeaders({
-          authorization: authHeader
-        })
-      }
-    ).toPromise().then((courses: Course[]) => {
-      this.notificationService.hideLoadingSnackbar();
-
-      foundCourses = courses;
-    }).catch((error: any) => {
-      console.log(error);
-
-      this.notificationService.showErrorMessage(SnackBarConstants.ERROR_COULD_NOT_GET_MY_TEACHER_COURSES);
-    });
-  */
 }
