@@ -1,6 +1,5 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from "@angular/core";
-import {DomSanitizer} from '@angular/platform-browser';
 
 import {NotificationService} from './notification.service';
 import {LocalStorageService} from './local-storage.service';
@@ -18,7 +17,6 @@ export class CoursesService {
     private httpClient: HttpClient,
     private notificationService: NotificationService,
     private localStorageService: LocalStorageService,
-    private sanitizer: DomSanitizer
   ) {
   }
 
