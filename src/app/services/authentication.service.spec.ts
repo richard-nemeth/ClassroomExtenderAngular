@@ -13,7 +13,7 @@ import {NotificationServiceStub} from '../test/testServices/notification.service
 import {TestAuthData} from '../test/testData/test-auth.data';
 import {BackendEndpointConstants} from '../constants/backend-endpoint.constants';
 import {TestCommonData} from '../test/testData/test-common.data';
-import { RouteConstants } from '../constants/route.constants';
+import {RouteConstants} from '../constants/route.constants';
 
 
 describe('AuthenticationService', () => {
@@ -24,8 +24,6 @@ describe('AuthenticationService', () => {
   let httpMock: HttpTestingController;
   let injector: TestBed;
 
-  let routeMock: any = { snapshot: {}};
-  let routeStateMock: any = { snapshot: {}, url: '/cookies'};
   let routerMock = {navigate: jasmine.createSpy('navigate')};
 
   beforeEach(waitForAsync(() => {
